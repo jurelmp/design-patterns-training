@@ -8,9 +8,10 @@ public class Main {
     public static void main(String args[]) {
         int numbers[] = {1, 3, 1, 2, 3, 4, 5};
         sort(numbers);
-        for (int n : numbers) {
-            System.out.println(n);
-        }
+//        for (int n : numbers) {
+//            System.out.println(n);
+//        }
+        System.out.println(check(1, numbers));
     }
 
     public static int countDuplicates(int numbers[]) {
@@ -26,14 +27,16 @@ public class Main {
 
     public static int check(int startIndex, int numbers[]) {
         int index = 0;
+        int count = 0;
         for (int i = startIndex; i < numbers.length; i++) {
             if (numbers[i] != numbers[i - 1]) {
                 index = i;
                 check(index, numbers);
+                count++;
                 break;
             }
         }
-        return index;
+        return count;
     }
 
     public static void sort(int numbers[]) {
