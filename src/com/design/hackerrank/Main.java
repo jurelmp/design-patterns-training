@@ -15,12 +15,25 @@ public class Main {
 
     public static int countDuplicates(int numbers[]) {
         int count = 0;
-        for (int i = 1; i < numbers.length; i++) {
-            if (numbers[i] == numbers[i - 1]) {
-                count++;
+        boolean flag = false;
+
+        while (!flag) {
+
+        }
+
+        return 0;
+    }
+
+    public static int check(int startIndex, int numbers[]) {
+        int index = 0;
+        for (int i = startIndex; i < numbers.length; i++) {
+            if (numbers[i] != numbers[i - 1]) {
+                index = i;
+                check(index, numbers);
+                break;
             }
         }
-        return 0;
+        return index;
     }
 
     public static void sort(int numbers[]) {
